@@ -1,0 +1,46 @@
+Starting "SYSTEM"."EXPORT_JOB_SQLDEV_4681":  
+Estimate in progress using BLOCKS method...
+Processing object type SCHEMA_EXPORT/TABLE/TABLE_DATA
+.  estimated "SKLEP"."ABSENCJE"                             64 KB
+.  estimated "SKLEP"."DEPARTAMENTY"                         64 KB
+.  estimated "SKLEP"."DOSTAWCY"                             64 KB
+.  estimated "SKLEP"."FAKTURY_SPRZEDAZY"                    64 KB
+.  estimated "SKLEP"."JEDNOSTKI_PRODUKTOW"                  64 KB
+.  estimated "SKLEP"."KLIENCI"                              64 KB
+.  estimated "SKLEP"."PRACOWNICY"                           64 KB
+.  estimated "SKLEP"."PRODUKTY"                             64 KB
+.  estimated "SKLEP"."PRZYCZYNY_ABSENCJI"                   64 KB
+.  estimated "SKLEP"."RODZAJE_SRODKOW_TRANSPORTU"           64 KB
+.  estimated "SKLEP"."TYPY_PRODUKTOW"                       64 KB
+.  estimated "SKLEP"."ZAKUPY"                               64 KB
+.  estimated "SKLEP"."ZAKUPY_POZYCJE"                       64 KB
+Total estimation using BLOCKS method: 832 KB
+Processing object type SCHEMA_EXPORT/USER
+Processing object type SCHEMA_EXPORT/SYSTEM_GRANT
+Processing object type SCHEMA_EXPORT/DEFAULT_ROLE
+Processing object type SCHEMA_EXPORT/TABLESPACE_QUOTA
+Processing object type SCHEMA_EXPORT/PRE_SCHEMA/PROCACT_SCHEMA
+Processing object type SCHEMA_EXPORT/TABLE/TABLE
+Processing object type SCHEMA_EXPORT/TABLE/INDEX/INDEX
+Processing object type SCHEMA_EXPORT/TABLE/CONSTRAINT/CONSTRAINT
+Processing object type SCHEMA_EXPORT/TABLE/INDEX/STATISTICS/INDEX_STATISTICS
+Processing object type SCHEMA_EXPORT/TABLE/CONSTRAINT/REF_CONSTRAINT
+Processing object type SCHEMA_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
+. . exported "SKLEP"."ABSENCJE"                          6.742 KB       5 rows
+. . exported "SKLEP"."DEPARTAMENTY"                      6.656 KB      12 rows
+. . exported "SKLEP"."DOSTAWCY"                          6.656 KB      20 rows
+. . exported "SKLEP"."FAKTURY_SPRZEDAZY"                 7.453 KB       1 rows
+. . exported "SKLEP"."JEDNOSTKI_PRODUKTOW"               7.148 KB      28 rows
+. . exported "SKLEP"."KLIENCI"                           7.304 KB       6 rows
+. . exported "SKLEP"."PRACOWNICY"                        8.804 KB      20 rows
+. . exported "SKLEP"."PRODUKTY"                          8.320 KB      25 rows
+. . exported "SKLEP"."PRZYCZYNY_ABSENCJI"                6.453 KB       9 rows
+. . exported "SKLEP"."RODZAJE_SRODKOW_TRANSPORTU"        7.578 KB       5 rows
+. . exported "SKLEP"."TYPY_PRODUKTOW"                    6.406 KB      10 rows
+. . exported "SKLEP"."ZAKUPY"                            7.078 KB       3 rows
+. . exported "SKLEP"."ZAKUPY_POZYCJE"                    6.796 KB      10 rows
+Master table "SYSTEM"."EXPORT_JOB_SQLDEV_4681" successfully loaded/unloaded
+******************************************************************************
+Dump file set for SYSTEM.EXPORT_JOB_SQLDEV_4681 is:
+  C:\ORACLEXE\APP\ORACLE\ADMIN\XE\DPDUMP\EXPDAT01.DMP
+Job "SYSTEM"."EXPORT_JOB_SQLDEV_4681" successfully completed at 19:32:17
