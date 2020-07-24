@@ -1,0 +1,22 @@
+Tabela logi do sprawdzenia logów z logowania:
+CREATE TABLE logi
+(
+typ_zdarzenia varchar(30),
+data_logowania DATE,
+czas_logowania varchar2(15),
+data_wylogowania DATE,
+czas_wylogowania varchar2(15)
+);
+TRIGGER odpowiedzialny za logowanie do sklepu
+CREATE OR REPLACE TRIGGER sklep_lgon_audyt
+AFTER LOGON ON SCHEMA
+BEGIN
+ INSERT INTO LOGI VALUES(
+ora_sysevent,
+sysdate,
+TO_CHAR(sysdate,'hh24:mi:ss'),
+NULL,
+NULL
+ );
+ COMMIT;
+ END;
