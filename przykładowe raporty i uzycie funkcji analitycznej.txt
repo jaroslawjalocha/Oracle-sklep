@@ -1,0 +1,20 @@
+<>raport wersja 1
+select nazwa_produktu produkt, cena_zakupu zakup,
+ceil(cena_sprzedazy*(1+stawka_podatku/100)*100)/100 sprzedaz, 
+stawka_podatku podatek,
+ceil(cena_sprzedazy*(1+stawka_podatku/100)*100)/100 - cena_zakupu marza
+from produkty;
+
+<>raport wersja 2
+select nazwa_produktu produkt, cena_zakupu zakup,
+cena_sprzedazy sprzedaz, stawka_podatku podatek,
+cena_sprzedazy - cena_zakupu marza
+from produkty;
+
+<> odchylenie ceny sprzedaży produktu od średniej z wykorzystaniem funkcji analitycznej
+SELECT nazwa_produktu, typ_produktu, cena_sprzedazy, srednia, ABS(cena_sprzedazy - srednia) odchylenie
+  FROM (
+		SELECT nazwa_produktu, typ_produktu, cena_sprzedazy
+		     , ROUND(AVG(cena_sprzedazy) over (PARTITION BY typ_produktu ORDER BY 1), 2) srednia
+		  FROM produkty
+		);

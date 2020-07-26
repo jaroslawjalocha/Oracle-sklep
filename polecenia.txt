@@ -1,0 +1,218 @@
+Tworzenie tabel:
+ CREATE TABLE PRACOWNICY
+ CREATE TABLE DEPARTAMENTY
+ CREATE TABLE PRODUKTY
+wstawanie 10 rekordów do tabeli pracownicy
+			Insert into PRACOWNICY (ID,IMIE,NAZWISKO,PESEL,PLEC,DATA_URODZENIA,PENSJA) values ('1','Jan','Kowalski','88020512345','M',to_date('88/02/05','RR/MM/DD'),'4000');
+			Insert into PRACOWNICY (ID,IMIE,NAZWISKO,PESEL,PLEC,DATA_URODZENIA,PENSJA) values ('2','Krzysztof','Kapusta','70122012345','M',to_date('70/12/20','RR/MM/DD'),'2500');
+			Insert into PRACOWNICY (ID,IMIE,NAZWISKO,PESEL,PLEC,DATA_URODZENIA,PENSJA) values ('3','Magdalena','Dzwonkowska','92081612345','K',to_date('92/08/16','RR/MM/DD'),'5000');
+			Insert into PRACOWNICY (ID,IMIE,NAZWISKO,PESEL,PLEC,DATA_URODZENIA,PENSJA) values ('4','Karol','Krawczyk','82010112345','M',to_date('82/01/01','RR/MM/DD'),'3000');
+			Insert into PRACOWNICY (ID,IMIE,NAZWISKO,PESEL,PLEC,DATA_URODZENIA,PENSJA) values ('5','Joanna','Bak','90121212345','K',to_date('90/12/12','RR/MM/DD'),'2700');
+			Insert into PRACOWNICY (ID,IMIE,NAZWISKO,PESEL,PLEC,DATA_URODZENIA,PENSJA) values ('6','Robert','Psikuta','95070815642','M',to_date('95/07/08','RR/MM/DD'),'4200');
+			Insert into PRACOWNICY (ID,IMIE,NAZWISKO,PESEL,PLEC,DATA_URODZENIA,PENSJA) values ('7','Stefan','Siarzewski','60051274391','M',to_date('60/05/12','RR/MM/DD'),'4550');
+			Insert into PRACOWNICY (ID,IMIE,NAZWISKO,PESEL,PLEC,DATA_URODZENIA,PENSJA) values ('8','Zofia','Brzydal','84021659712','K',to_date('84/02/16','RR/MM/DD'),'2400');
+			Insert into PRACOWNICY (ID,IMIE,NAZWISKO,PESEL,PLEC,DATA_URODZENIA,PENSJA) values ('9','Julia','Niedziela','81050242315','K',to_date('81/05/02','RR/MM/DD'),'7000');
+			Insert into PRACOWNICY (ID,IMIE,NAZWISKO,PESEL,PLEC,DATA_URODZENIA,PENSJA) values ('10','Bartosz','Karmel','58031245679','M',to_date('58/03/12','RR/MM/DD'),'5120');
+
+zatwierdzenie polecenia insert
+			commit;
+
+	
+<>  dodanie constrainu not null do kolumny imie
+	alter table pracownicy
+	modify imie not null;
+	
+	
+<>  dodanie constrainu not null do kolumny nazwisko
+	alter table pracownicy
+	modify nazwisko not null;
+
+	
+<> dodanie constrainu check do kolumy plec
+	alter table pracownicy
+	modify check (plec in ('M', 'K')
+
+
+	
+<> dodanie constrainu not null do kolumny plec
+	alter table pracownicy
+	modify plec not null;
+	
+	
+<> dodanie constrainu not null do kolumny plec oraz zmiana typu danych na number(11)
+	alter table pracownicy
+	modify pesel number(11) not null;
+
+
+	
+	
+<>wstawanie 10 rekordów do tabeli pracownicy
+			Insert into PRACOWNICY (ID,IMIE,NAZWISKO,PESEL,PLEC,DATA_URODZENIA,PENSJA) values ('1','Jan','Kowalski','88020512345','M',to_date('88/02/05','RR/MM/DD'),'4000');
+			Insert into PRACOWNICY (ID,IMIE,NAZWISKO,PESEL,PLEC,DATA_URODZENIA,PENSJA) values ('2','Krzysztof','Kapusta','70122012345','M',to_date('70/12/20','RR/MM/DD'),'2500');
+			Insert into PRACOWNICY (ID,IMIE,NAZWISKO,PESEL,PLEC,DATA_URODZENIA,PENSJA) values ('3','Magdalena','Dzwonkowska','92081612345','K',to_date('92/08/16','RR/MM/DD'),'5000');
+			Insert into PRACOWNICY (ID,IMIE,NAZWISKO,PESEL,PLEC,DATA_URODZENIA,PENSJA) values ('4','Karol','Krawczyk','82010112345','M',to_date('82/01/01','RR/MM/DD'),'3000');
+			Insert into PRACOWNICY (ID,IMIE,NAZWISKO,PESEL,PLEC,DATA_URODZENIA,PENSJA) values ('5','Joanna','Bak','90121212345','K',to_date('90/12/12','RR/MM/DD'),'2700');
+			Insert into PRACOWNICY (ID,IMIE,NAZWISKO,PESEL,PLEC,DATA_URODZENIA,PENSJA) values ('6','Robert','Psikuta','95070815642','M',to_date('95/07/08','RR/MM/DD'),'4200');
+			Insert into PRACOWNICY (ID,IMIE,NAZWISKO,PESEL,PLEC,DATA_URODZENIA,PENSJA) values ('7','Stefan','Siarzewski','60051274391','M',to_date('60/05/12','RR/MM/DD'),'4550');
+			Insert into PRACOWNICY (ID,IMIE,NAZWISKO,PESEL,PLEC,DATA_URODZENIA,PENSJA) values ('8','Zofia','Brzydal','84021659712','K',to_date('84/02/16','RR/MM/DD'),'2400');
+			Insert into PRACOWNICY (ID,IMIE,NAZWISKO,PESEL,PLEC,DATA_URODZENIA,PENSJA) values ('9','Julia','Niedziela','81050242315','K',to_date('81/05/02','RR/MM/DD'),'7000');
+			Insert into PRACOWNICY (ID,IMIE,NAZWISKO,PESEL,PLEC,DATA_URODZENIA,PENSJA) values ('10','Bartosz','Karmel','58031245679','M',to_date('58/03/12','RR/MM/DD'),'5120');
+
+<> dodanie klucza głównego do tabeli pracownicy
+	 alter table pracownicy
+	add constraint pk_pracownicy primary key (id);
+
+<> dodanie klucza głównego do tabeli produkty
+	alter table produkty
+	add constraint pk_produkty primary key (id); 
+
+<> tworzenie wpisów do tabeli produkty
+Insert into PRODUKTY (ID,NAZWA_PRODUKTU,TYP_PRODUKTU,CENA_SPRZEDAZY,CENA_ZAKUPU,STAWKA_PODATKU) values ('1','Baton "Mars"','słodycz','2,5','1,5','23');
+Insert into PRODUKTY (ID,NAZWA_PRODUKTU,TYP_PRODUKTU,CENA_SPRZEDAZY,CENA_ZAKUPU,STAWKA_PODATKU) values ('2','chleb','pieczywo','3','1,2','23');
+Insert into PRODUKTY (ID,NAZWA_PRODUKTU,TYP_PRODUKTU,CENA_SPRZEDAZY,CENA_ZAKUPU,STAWKA_PODATKU) values ('3','płatki owsiane 0.5kg','nasiona','2,25','1,45','23');
+Insert into PRODUKTY (ID,NAZWA_PRODUKTU,TYP_PRODUKTU,CENA_SPRZEDAZY,CENA_ZAKUPU,STAWKA_PODATKU) values ('4','płatki owsiane 1kg','nasiona','4','2,4','23');
+Insert into PRODUKTY (ID,NAZWA_PRODUKTU,TYP_PRODUKTU,CENA_SPRZEDAZY,CENA_ZAKUPU,STAWKA_PODATKU) values ('5','mleko','nabiał','3,5','2','23');
+Insert into PRODUKTY (ID,NAZWA_PRODUKTU,TYP_PRODUKTU,CENA_SPRZEDAZY,CENA_ZAKUPU,STAWKA_PODATKU) values ('6','jogurt "Danone"','nabiał','3,5','2','23');
+Insert into PRODUKTY (ID,NAZWA_PRODUKTU,TYP_PRODUKTU,CENA_SPRZEDAZY,CENA_ZAKUPU,STAWKA_PODATKU) values ('7','woda gazowana','napoje','1,9','1','23');
+Insert into PRODUKTY (ID,NAZWA_PRODUKTU,TYP_PRODUKTU,CENA_SPRZEDAZY,CENA_ZAKUPU,STAWKA_PODATKU) values ('8','woda niegazowana','napoje','1,9','1','23');
+Insert into PRODUKTY (ID,NAZWA_PRODUKTU,TYP_PRODUKTU,CENA_SPRZEDAZY,CENA_ZAKUPU,STAWKA_PODATKU) values ('9','oranżada','napoje','2,49','2','23');
+Insert into PRODUKTY (ID,NAZWA_PRODUKTU,TYP_PRODUKTU,CENA_SPRZEDAZY,CENA_ZAKUPU,STAWKA_PODATKU) values ('10','bułka pszenna','pieczywo','0,5','0,3','23');
+Insert into PRODUKTY (ID,NAZWA_PRODUKTU,TYP_PRODUKTU,CENA_SPRZEDAZY,CENA_ZAKUPU,STAWKA_PODATKU) values ('11','bułka żytnia','pieczywo','0,7','0,5','23');
+Insert into PRODUKTY (ID,NAZWA_PRODUKTU,TYP_PRODUKTU,CENA_SPRZEDAZY,CENA_ZAKUPU,STAWKA_PODATKU) values ('12','balsam do ciała','kosmetyki','20','14','23');
+Insert into PRODUKTY (ID,NAZWA_PRODUKTU,TYP_PRODUKTU,CENA_SPRZEDAZY,CENA_ZAKUPU,STAWKA_PODATKU) values ('13','krem do rąk','kosmetyki','8','6,4','23');
+Insert into PRODUKTY (ID,NAZWA_PRODUKTU,TYP_PRODUKTU,CENA_SPRZEDAZY,CENA_ZAKUPU,STAWKA_PODATKU) values ('14','dezodorant','kosmetyki','9','4,4','23');
+Insert into PRODUKTY (ID,NAZWA_PRODUKTU,TYP_PRODUKTU,CENA_SPRZEDAZY,CENA_ZAKUPU,STAWKA_PODATKU) values ('15','piwo','alkohol','4','2,8','30');
+Insert into PRODUKTY (ID,NAZWA_PRODUKTU,TYP_PRODUKTU,CENA_SPRZEDAZY,CENA_ZAKUPU,STAWKA_PODATKU) values ('16','wódka polska','alkohol','25','14','30');
+Insert into PRODUKTY (ID,NAZWA_PRODUKTU,TYP_PRODUKTU,CENA_SPRZEDAZY,CENA_ZAKUPU,STAWKA_PODATKU) values ('17','whiskey','alkohol','60','40','30');
+Insert into PRODUKTY (ID,NAZWA_PRODUKTU,TYP_PRODUKTU,CENA_SPRZEDAZY,CENA_ZAKUPU,STAWKA_PODATKU) values ('18','czekolada','słodycz','5','2','23');
+Insert into PRODUKTY (ID,NAZWA_PRODUKTU,TYP_PRODUKTU,CENA_SPRZEDAZY,CENA_ZAKUPU,STAWKA_PODATKU) values ('19','ryż','nasiona','3','1,5','23');
+Insert into PRODUKTY (ID,NAZWA_PRODUKTU,TYP_PRODUKTU,CENA_SPRZEDAZY,CENA_ZAKUPU,STAWKA_PODATKU) values ('20','kasza gryczana','nasiona','3','1,7','23');
+	
+	<>zatwierdzenie rekordów
+	commit;
+	
+	<> dodanie klucza głównego do tabeli departamenty
+	alter table departamenty
+	add constraint pk_departamenty primary key (kod_departamentu);
+	
+<> tworzenie wpisów do tabeli departamenty
+Insert into DEPARTAMENTY (KOD_DEPARTAMENTU,NAZWA_DEPARTAMENTU,ID_KIEROWNIKA,MIEJSCOWOSC) values ('1','księgowość',null,'Warszawa Śródmieście');
+Insert into DEPARTAMENTY (KOD_DEPARTAMENTU,NAZWA_DEPARTAMENTU,ID_KIEROWNIKA,MIEJSCOWOSC) values ('2','produkcja',null,'Piaseczno');
+Insert into DEPARTAMENTY (KOD_DEPARTAMENTU,NAZWA_DEPARTAMENTU,ID_KIEROWNIKA,MIEJSCOWOSC) values ('3','administracja',null,'Warszawa Centrum');
+Insert into DEPARTAMENTY (KOD_DEPARTAMENTU,NAZWA_DEPARTAMENTU,ID_KIEROWNIKA,MIEJSCOWOSC) values ('4','IT',null,'Warszawa Centrum');
+Insert into DEPARTAMENTY (KOD_DEPARTAMENTU,NAZWA_DEPARTAMENTU,ID_KIEROWNIKA,MIEJSCOWOSC) values ('5','Sprzedaż',null,'Warszawa Śródmieście');
+
+<>zatwierdzenie rekordów
+commit;
+<> dodanie klucza obcego do tabeli departamenty
+alter table departamenty
+add constraint fk_dep_pracownik foreign key (id_kierownika) references pracownicy(id);
+
+
+<>tworzenie tabeli typy produktow wraz z ograniczeniami
+	create table typy_produktow
+	(
+	typ_produktu varchar2(20) primary key,
+	nazwa_pelna varchar(40) not null,
+	rabat number,
+	okres_waznosci varchar2(1) check (okres_waznosci in ('K', 'D'))
+	);
+
+<>modyfikacja wartosci w tabeli produkty
+	update produkty
+	set typ_produktu = 'SLO'
+	where typ_produktu = 'słodycz';
+	
+	update produkty
+	set typ_produktu = 'PIE'
+	where typ_produktu = 'pieczywo';
+	
+	update produkty
+	set typ_produktu = 'NAS'
+	where typ_produktu = 'nasiona';
+	
+	update produkty
+	set typ_produktu = 'NAB'
+	where typ_produktu = 'nabiał';
+	
+	update produkty
+	set typ_produktu = 'NAP'
+	where typ_produktu = 'napoje';
+	
+	update produkty
+	set typ_produktu = 'KOS'
+	where typ_produktu = 'kosmetyki';
+	
+	update produkty
+	set typ_produktu = 'ALK'
+	where typ_produktu = 'alkohol';
+
+	commit;
+
+<>wprowadzanie danych do tabeli typy_produktów	
+	Insert into TYPY_PRODUKTOW (TYP_PRODUKTU, NAZWA_PELNA, RABAT, OKRES_WAZNOSCI)
+	values ('SLO', 'słodycze', null, 'D');
+	
+	Insert into TYPY_PRODUKTOW (TYP_PRODUKTU, NAZWA_PELNA, RABAT, OKRES_WAZNOSCI)
+	values ('PIE', 'pieczywo', null, 'K');
+	
+	Insert into TYPY_PRODUKTOW (TYP_PRODUKTU, NAZWA_PELNA, RABAT, OKRES_WAZNOSCI)
+	values ('NAS', 'nasiona', null, 'D');
+	
+	Insert into TYPY_PRODUKTOW (TYP_PRODUKTU, NAZWA_PELNA, RABAT, OKRES_WAZNOSCI)
+	values ('NAB', 'nabiał', null, 'K');
+	
+	Insert into TYPY_PRODUKTOW (TYP_PRODUKTU, NAZWA_PELNA, RABAT, OKRES_WAZNOSCI)
+	values ('NAP','napoje', null, 'D');
+	
+	Insert into TYPY_PRODUKTOW (TYP_PRODUKTU, NAZWA_PELNA, RABAT, OKRES_WAZNOSCI)
+	values ('KOS','kosmetyki', null, 'D');
+	
+	Insert into TYPY_PRODUKTOW (TYP_PRODUKTU, NAZWA_PELNA, RABAT, OKRES_WAZNOSCI)
+	values ('ALK','alkohol', null, 'D');
+	
+	Insert into TYPY_PRODUKTOW (TYP_PRODUKTU, NAZWA_PELNA, RABAT, OKRES_WAZNOSCI)
+	values ('OWO','owoce', null, 'K');
+	
+	Insert into TYPY_PRODUKTOW (TYP_PRODUKTU, NAZWA_PELNA, RABAT, OKRES_WAZNOSCI)
+	values ('WAR','warzywa', null, 'K');
+	
+	commit;
+	
+<>dodawanie constraint klucz obcy do tabeli produkty
+	alter table produkty
+	add constraint fk_typ_produktu foreign key (typ_produktu)
+	references typy_produktow(typ_produktu);	
+	
+<>wprowadzanie warzyw i owoców to tabeli produkty
+	Insert into PRODUKTY (ID,NAZWA_PRODUKTU,TYP_PRODUKTU,CENA_SPRZEDAZY,CENA_ZAKUPU,STAWKA_PODATKU) values ('21','jabłko','OWO','4','2,52','23');
+	Insert into PRODUKTY (ID,NAZWA_PRODUKTU,TYP_PRODUKTU,CENA_SPRZEDAZY,CENA_ZAKUPU,STAWKA_PODATKU) values ('22','pomarańcza','OWO','8','5,01','23');
+	Insert into PRODUKTY (ID,NAZWA_PRODUKTU,TYP_PRODUKTU,CENA_SPRZEDAZY,CENA_ZAKUPU,STAWKA_PODATKU) values ('23','banan','OWO','7,25','4,99','23');
+	Insert into PRODUKTY (ID,NAZWA_PRODUKTU,TYP_PRODUKTU,CENA_SPRZEDAZY,CENA_ZAKUPU,STAWKA_PODATKU) values ('24','pomidor malinowy','WAR','12,99','10,99','23');
+	Insert into PRODUKTY (ID,NAZWA_PRODUKTU,TYP_PRODUKTU,CENA_SPRZEDAZY,CENA_ZAKUPU,STAWKA_PODATKU) values ('25','ogórek','WAR','2,99','1,99','23');
+
+	commit;
+	
+	<>dodanie kolumny jednostka magazynowa
+	Alter table produkty
+	Add JM varchar2(10); 
+	
+	<>modyfikacja wartości w kolumnie jednostka magazynowa
+	update produkty
+	set JM = 'szt'
+	where id<=20;
+	
+	update produkty
+	set JM = 'kg'
+	where id>20;
+	
+
+
+<>tworzenie tabeli dostawcy
+	create table dostawcy
+	(
+		id_dostawcy number primary key,
+		nazwa_dostawcy varchar(50) not null,
+		kod_rodzaju_srodka_transportu varchar2(20) not null,
+		status_aktywnosci varchar2(1)
+	);
